@@ -1,0 +1,3 @@
+[submodule "AppDotNetPHP"]
+	path = AppDotNetPHP
+	url = git://github.com/jdolitsky/AppDotNetPHP.git
