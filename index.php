@@ -60,6 +60,7 @@
 				<b>Use the mouse wheel</b> to zoom and <b>drag and drop the canvas</b> to pan.<br><br>
 				This is a rough-and-ready prototype &amp; may not work with threads in excess of 200 posts.<br>
 				Built using <a href="http://thejit.org/">The JavaScript InfoVis Toolkit</a>.<br><br>
+				<a href="https://github.com/edent/HyperThread">OpenSource HyperThread on GitHub</a><br><br>
 				HyperThread created by <a href="http://shkspr.mobi/blog/">Terence Eden</a>.  You can follow me on <a href="http://alpha.app.net/edent">App.net</a> and on <a href="https://twitter.com/edent">Twitter</a>.
 			</div>
 		</div>
