@@ -101,7 +101,8 @@ function init(){
 						"text" => htmlspecialchars($text), 
 						"textHTML" => htmlspecialchars($textHTML),
 						"user" => htmlspecialchars($user), 
-						"avatar" => $avatar
+						"avatar" => $avatar,
+						'$direction' => array($id,$parent)
 					)
 				);
 
@@ -145,7 +146,7 @@ function init(){
 		var rgraph = new $jit.RGraph({
 		//Where to append the visualization
 		injectInto: 'infovis',
-
+hideLabels:false,
 		//Enable tips
 		Tips: {
 			enable: true,
@@ -188,6 +189,7 @@ function init(){
 		
 		Edge: {
 			color: '#C17878',
+			type: 'arrow',
 			lineWidth:1.5
 		},
 
@@ -225,6 +227,7 @@ function init(){
 
 			domElement.onclick = function(){
 				rgraph.onClick(node.id);
+				hideLabels: false;
 			};
 		},
 		//Change some label dom properties.
@@ -277,6 +280,7 @@ function init(){
 	rgraph.compute('end');
 	rgraph.fx.animate({
 		modes:['polar'],
-		duration: 3000
+		duration: 3000,
+		hideLabels:false
 	});
 }
