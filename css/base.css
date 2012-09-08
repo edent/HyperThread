@@ -5,6 +5,7 @@ html, body {
     font-size: 0.9em;
     text-align: center;
     background-color:#F2F2F2;
+    overflow: hidden;
     height: 100%
 }
 
@@ -44,7 +45,6 @@ a {
 #center-container {
     height:100%;
     position:absolute;
-    top:0;
 }
 
 #left-container, #right-container {
@@ -107,6 +107,7 @@ a {
     height:100%;
     margin:auto;
     overflow:hidden;
+    top:0px;
 }
 
 /*TOOLTIPS*/
