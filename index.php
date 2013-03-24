@@ -4,7 +4,7 @@
 	{
 		$thread_id = htmlspecialchars($_GET["thread"]);
 	} else {
-		$thread_id = "260466"; // Default Thread
+		$thread_id = "4153544"; // Default Thread
 	}
 
 ?><!DOCTYPE html>
@@ -49,9 +49,9 @@
 				<ul>
 					<li><a href="?thread=262171">262171</a></li>
 					<li><a href="?thread=242969">242969</a></li>
-					<li><a href="?thread=263761">263761</a></li>
+					<li><a href="?thread=1">1</a></li>
 					<li><a href="?thread=243022">243022</a></li>
-					<li><a href="?thread=265845">265845</a></li>
+					<li><a href="?thread=4153544">4153544</a></li>
 				</ul>
 
 			</div>

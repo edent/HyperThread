@@ -57,9 +57,7 @@ var Log = {
 
 function init(){
 
-<?php
-
-
+	<?php
 		if ($app->getSession()) 
 		{
 			//	Get up to 200 replies
@@ -95,17 +93,16 @@ function init(){
 				//	Place the post in the array based on its ID
 				$references[$id] = array(
 					"id" => $id,
-					"name" => htmlspecialchars($name),
+					"name" => htmlspecialchars($name,ENT_QUOTES),
 					"reply_to" => $parent, 
 					"data" => array(
-						"text" => htmlspecialchars($text), 
-						"textHTML" => htmlspecialchars($textHTML),
-						"user" => htmlspecialchars($user), 
+						"text" => htmlspecialchars($text,ENT_QUOTES), 
+						"textHTML" => htmlspecialchars($textHTML,ENT_QUOTES),
+						"user" => htmlspecialchars($user,ENT_QUOTES), 
 						"avatar" => $avatar,
 						'$direction' => array($id,$parent)
 					)
 				);
-
 			}
 
 			// now create the tree
@@ -134,9 +131,20 @@ function init(){
 			//	Trim the "[" and "]"
 			$output = json_encode($tree);
 			$output = substr($output, 1, -1);
+
+			//	Sometimes a weird extra ",null" is added
+			$needle = ",null";
+			$length = strlen($needle);
+
+			if (substr($output, -$length) === $needle)
+			{
+				$output = substr($output, 0, -$length);
+			}
+
+
 			
 			//	Output into the JavaScript
-			echo "var json = " . $output . ";";
+			echo "\nvar json = " . $output . ";";
 		}
 		else
 		{echo "No SESH!";
