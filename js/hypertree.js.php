@@ -128,21 +128,13 @@ function init(){
 				unset($post);
 			}
 
+			//	Get rid of all the null values - otherwise things screw up
+			$tree = array_filter($tree);
+
 			//	Trim the "[" and "]"
 			$output = json_encode($tree);
 			$output = substr($output, 1, -1);
 
-			//	Sometimes a weird extra ",null" is added
-			$needle = ",null";
-			$length = strlen($needle);
-
-			if (substr($output, -$length) === $needle)
-			{
-				$output = substr($output, 0, -$length);
-			}
-
-
-			
 			//	Output into the JavaScript
 			echo "\nvar json = " . $output . ";";
 		}
