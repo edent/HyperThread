@@ -60,6 +60,9 @@ function init(){
 	<?php
 		if ($app->getSession()) 
 		{
+			$individualPost = $app->getPost($thread_id);
+			$thread_id = $individualPost['thread_id'];
+
 			//	Get up to 200 replies
 			$thread = $app->getPostReplies($thread_id,array('count'=>"200"));
 
